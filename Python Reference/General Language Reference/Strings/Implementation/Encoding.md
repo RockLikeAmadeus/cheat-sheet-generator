@@ -1,0 +1,1 @@
+By default, Python uses UTF-8 for string encoding
