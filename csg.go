@@ -87,7 +87,7 @@ func writeContents(dir fs.FileInfo, refFile *os.File, path string, level int) {
 		} else if strings.HasSuffix(file.Name(), ".md") { // Only write the contents of markdown files
 			// Write contents for markdown files
 			headingTitle := strings.TrimSuffix(file.Name(), ".md")
-			refFile.WriteString(generateHeading(level+1, headingTitle) + "\n\n")
+			refFile.WriteString(generateHeading(6, headingTitle) + "\n\n")
 			content, err := ioutil.ReadFile(path + "/" + dir.Name() + "/" + file.Name())
 			check(err)
 			refFile.WriteString(string(content) + "\n\n")
