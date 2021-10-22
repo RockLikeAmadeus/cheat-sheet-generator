@@ -38,7 +38,7 @@
 ### Style
 
 [[#Naming]]
-[[#Standard.md]]
+[[#Standard]]
 
 ---
 
@@ -57,49 +57,63 @@
 
 ##### Creating Lists
 
-[[#Create a List With Dynamic Content.md]]
+[[#Create a List With Dynamic Content]]
 
 ---
 
 
+
+###### Create a List With Dynamic Content
 
 Contents Here
 
 #### Retrieving Documentation
 
-[[#Retrieve Documentation for a Class.md]]
-[[#Retrieve Documentation for a Function.md]]
+[[#Retrieve Documentation for a Class]]
+[[#Retrieve Documentation for a Function]]
 
 ---
 
 
 
+###### Retrieve Documentation for a Class
+
 Contents Here
+
+###### Retrieve Documentation for a Function
 
 Contents Here
 
 #### Implementation
 
-[[#Encoding.md]]
+[[#Encoding]]
 
 ---
 
 
+
+###### Encoding
 
 Contents Here
 
 #### Naming
 
-[[#Naming Functions.md]]
-[[#Naming Variables.md]]
+[[#Naming Functions]]
+[[#Naming Variables]]
 
 ---
 
 
 
-Contents Here
+###### Naming Functions
 
 Contents Here
+
+###### Naming Variables
+
+Contents Here
+
+##### Standard
 
 Contents Here
 

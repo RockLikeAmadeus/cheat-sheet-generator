@@ -61,8 +61,8 @@ func createRefFile(dir fs.FileInfo) {
 writeIndex writes the table of contents for the directory dir to the file refFile
 */
 func writeIndex(dir fs.FileInfo, refFile *os.File, path string, level int) {
-	heading := strings.Repeat("#", level) + " " + dir.Name() + "\n\n"
-	refFile.WriteString(heading)
+	// Write the heading
+	refFile.WriteString(generateHeading(level, dir.Name()) + "\n\n")
 
 	// Iterate through sub-directories and files
 	files, err := ioutil.ReadDir(path + "/" + dir.Name())
@@ -70,7 +70,10 @@ func writeIndex(dir fs.FileInfo, refFile *os.File, path string, level int) {
 
 	for _, file := range files {
 		// Write an internal link for each sub-directory
-		refFile.WriteString("[[#" + file.Name() + "]]\n")
+		name := file.Name()
+		// If this is a markdown file, chop off the extension
+		name = strings.TrimSuffix(name, ".md")
+		refFile.WriteString("[[#" + name + "]]\n")
 	}
 	refFile.WriteString("\n---\n\n")
 }
@@ -91,9 +94,22 @@ func writeContents(dir fs.FileInfo, refFile *os.File, path string, level int) {
 	// Write the contents for each sub-directory
 	for _, file := range files {
 		if file.IsDir() && (strings.Index(file.Name(), ".") != 0) {
+			// Write contents for directories
 			writeContents(file, refFile, path+"/"+dir.Name(), level+1)
-		} else {
+		} else if strings.HasSuffix(file.Name(), ".md") { // Only write the contents of markdown files
+			// Write contents for markdown files
+			// headingTitle := file.Name()[:len(file.Name()-len(file.))]
+			headingTitle := strings.TrimSuffix(file.Name(), ".md")
+			refFile.WriteString(generateHeading(level+1, headingTitle) + "\n\n")
 			refFile.WriteString("Contents Here\n\n")
 		}
 	}
+}
+
+func generateHeading(level int, name string) string {
+	// Obsidian Markdown doesn't parse h7 or larger
+	if level > 6 {
+		level = 6
+	}
+	return strings.Repeat("#", level) + " " + name
 }
