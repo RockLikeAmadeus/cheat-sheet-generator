@@ -61,7 +61,7 @@ func writeIndex(dir fs.FileInfo, refFile *os.File, path string, level int) {
 		// Write an internal link for each sub-directory
 		refFile.WriteString("[[#" + name + "]]\n")
 	}
-	refFile.WriteString("\n---\n\n[[#" + refFileTitle + "|Back to Top]]\n\n---\n\n")
+	refFile.WriteString("\n\n" + generateBackLink() + "\n\n<br><br><br><br><br>\n---\n\n")
 	// refFile.WriteString("\n---\n\n")
 }
 
@@ -91,7 +91,7 @@ func writeContents(dir fs.FileInfo, refFile *os.File, path string, level int) {
 			content, err := ioutil.ReadFile(path + "/" + dir.Name() + "/" + file.Name())
 			check(err)
 			refFile.WriteString(string(content) + "\n\n")
-			refFile.WriteString("[[#" + refFileTitle + "|Back to Top]]\n\n---\n\n")
+			refFile.WriteString(generateBackLink() + "\n\n<br><br><br><br><br>\n---\n\n")
 		}
 	}
 }
@@ -102,4 +102,8 @@ func generateHeading(level int, name string) string {
 		level = 6
 	}
 	return strings.Repeat("#", level) + " " + name
+}
+
+func generateBackLink() string {
+	return "_[[#" + refFileTitle + "|Back to Top]]_"
 }

@@ -8,19 +8,19 @@
 [[#Style]]
 [[#Types]]
 
----
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 ## Specialty Use Cases
 
 
----
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 
@@ -28,30 +28,30 @@
 
 [[#Lists]]
 
----
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 ### Documentation
 
 [[#Retrieving Documentation]]
 
----
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 ### Strings
 
 [[#Implementation]]
 
----
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 ### Style
@@ -59,19 +59,19 @@
 [[#Naming]]
 [[#Standard]]
 
----
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 ### Types
 
 
----
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 
@@ -79,10 +79,10 @@
 
 [[#Creating Lists]]
 
----
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 
@@ -90,10 +90,10 @@
 
 [[#Create a List With Dynamic Content]]
 
----
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 
@@ -107,8 +107,9 @@ _Example:_
 newlist = [x for x in range(10) if x < 5]
 ```
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 #### Retrieving Documentation
@@ -116,10 +117,10 @@ newlist = [x for x in range(10) if x < 5]
 [[#Retrieve Documentation for a Class]]
 [[#Retrieve Documentation for a Function]]
 
----
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 
@@ -134,8 +135,9 @@ help(function_name)
 dir(function_name)
 ```
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 ###### Retrieve Documentation for a Function
@@ -148,18 +150,19 @@ help(function_name)
 type(function_name)
 ```
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 #### Implementation
 
 [[#Encoding]]
 
----
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 
@@ -168,8 +171,9 @@ type(function_name)
 
 By default, Python uses UTF-8 for string encoding
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 #### Naming
@@ -177,10 +181,10 @@ By default, Python uses UTF-8 for string encoding
 [[#Naming Functions]]
 [[#Naming Variables]]
 
----
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 
@@ -194,8 +198,9 @@ _**Example:**_
 def my_multi_word_function():
 ```
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 ###### Naming Variables
@@ -207,16 +212,18 @@ _Example:_
 my_multi_word_variable = 0
 ```
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 ###### Standard
 
 [PEP 8](https://www.python.org/dev/peps/pep-0008/)
 
-[[#Python Reference|Back to Top]]
+_[[#Python Reference|Back to Top]]_
 
+<br><br><br><br><br>
 ---
 
 
