@@ -41,10 +41,18 @@ func createRefFile(dir fs.FileInfo) {
 	files, err := ioutil.ReadDir(dir.Name())
 	check(err)
 
+	// Write the table of contents for each sub-directory
 	for _, file := range files {
-		// Write the table of contents for each sub-directory
 		if file.IsDir() && (strings.Index(file.Name(), ".") != 0) {
 			writeIndex(file, refFile, dir.Name(), 2)
+		}
+	}
+	refFile.WriteString("---\n\n")
+
+	// Write the contents for each sub-directory and file
+	for _, file := range files {
+		if file.IsDir() && (strings.Index(file.Name(), ".") != 0) {
+			writeContents(file, refFile, dir.Name(), 3)
 		}
 	}
 	refFile.WriteString("---\n\n")
@@ -65,6 +73,23 @@ func writeIndex(dir fs.FileInfo, refFile *os.File, path string, level int) {
 		// Write an internal link for each sub-directory
 		if file.IsDir() && (strings.Index(file.Name(), ".") != 0) {
 			refFile.WriteString("[[#" + file.Name() + "]]\n")
+		}
+	}
+	refFile.WriteString("\n")
+}
+
+func writeContents(dir fs.FileInfo, refFile *os.File, path string, level int) {
+	// Iterate through sub-directories and files
+	files, err := ioutil.ReadDir(path + "/" + dir.Name())
+	check(err)
+
+	for _, file := range files {
+		// Write the heading for each sub-directory, followed by the table of contents
+		if file.IsDir() && (strings.Index(file.Name(), ".") != 0) {
+			// Heading
+			//refFile.WriteString(strings.Repeat("#", level) + " " + file.Name() + "\n")
+			// Table of Contents
+			writeIndex(file, refFile, path+"/"+dir.Name(), level)
 		}
 	}
 	refFile.WriteString("\n")

@@ -13,3 +13,26 @@
 
 ---
 
+### Collections
+
+[[#Lists]]
+
+### Documentation
+
+[[#Retrieving Documentation]]
+
+### Strings
+
+[[#Implementation]]
+
+### Style
+
+[[#Naming]]
+
+### Types
+
+
+
+
+---
+
