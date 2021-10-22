@@ -1,18 +1,22 @@
 package main
 
 import (
-	"fmt"
 	"io/fs"
 	"io/ioutil"
 	"log"
+	"os"
 	"strings"
 )
 
-func main() {
-	files, err := ioutil.ReadDir(".")
+func check(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}
+}
+
+func main() {
+	files, err := ioutil.ReadDir(".")
+	check(err)
 
 	for _, file := range files {
 		// Iterate through all non-hidden directories
@@ -24,5 +28,12 @@ func main() {
 }
 
 func createRefFile(dir fs.FileInfo) {
-	fmt.Println(dir.Name())
+	// Create the file
+	file, err := os.Create(dir.Name() + ".md")
+	check(err)
+
+	defer file.Close()
+
+	// Add the top-level heading
+	file.WriteString("# " + dir.Name() + "\n\n")
 }
